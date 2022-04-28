@@ -1,0 +1,155 @@
+import java.util.*;
+
+public class a {
+   public static void main(String args[]) {
+      Scanner scan = new Scanner(System.in);
+      int sinho1,sinho2; 
+      int cmd;  
+      
+      System.out.println("* 원하는 플립플롭을 선택해주세요 ");
+      System.out.println("* 1. s-r 플립플롭 ");
+      System.out.println("* 2. j-k 플립플롭 ");
+      System.out.println("* 3. T 플립플롭");
+      System.out.println("* 4. D 플립플롭");
+      System.out.print("입력 >");
+      cmd =scan.nextInt();      
+      
+      if(cmd == 1) {
+         System.out.print("S 의 값:");
+         sinho1 =scan.nextInt();   
+         System.out.print("R 의 값:");
+         sinho2 =scan.nextInt();   
+         
+         if(sinho1 >= 1) {
+            sinho1 = 1;
+         }else {
+            sinho1 = 0;
+         }
+         
+         
+         if(sinho2 >= 1) {
+            sinho2 = 1;
+         }else {
+            sinho2 = 0;
+         }
+         
+         a.sr(sinho1,sinho2);
+      }
+      
+      if(cmd == 2) {
+         System.out.print("J 의 값:");
+         sinho1 =scan.nextInt();   
+         System.out.print("K 의 값:");
+         sinho2 =scan.nextInt();   
+         
+         if(sinho1 >= 1) {
+            sinho1 = 1;
+         }else {
+            sinho1 = 0;
+         }
+         
+         if(sinho2 >= 1) {
+            sinho2 = 1;
+         }else {
+            sinho2 = 0;
+         }
+         
+         a.jk(sinho1,sinho2);         
+      }
+      
+      if(cmd == 3) {
+         System.out.print("T 의 값:");
+         sinho1 =scan.nextInt();   
+         if(sinho1 >= 1) {
+            sinho1 = 1;
+         }else {
+            sinho1 = 0;
+         }      
+         
+         a.t(sinho1);
+      }
+      
+      if(cmd == 4) {
+         System.out.print("D 의 값:");
+         sinho1 =scan.nextInt();   
+         if(sinho1 >= 1) {
+            sinho1 = 1;
+         }else {
+            sinho1 = 0;
+         }      
+         
+         a.d(sinho1);      
+         
+      }
+   }
+   
+   static public int jk(int j,int k) {
+      String val = "";
+      
+      if(j == 0 && k == 0) {
+         val = "Q(t)";
+      }
+      if(j == 0 && k == 1) {
+         val = "0";
+      }      
+      if(j == 1 && k == 0) {
+         val = "1";
+      }         
+      if(j == 1 && k == 1) {
+         val = "Q`(t)";
+      }         
+      System.out.println("|J |K |Q(t+1)");
+      System.out.println("|"+j+" |"+k+" |"+val);
+      return 0;
+      
+   
+   }
+
+   static public int sr(int s, int r) {
+      String val = "";
+      
+      if(s == 0 && r == 0) {
+         val = "Q(t)";
+      }
+      if(s == 0 && r == 1) {
+         val = "0";
+      }      
+      if(s == 1 && r == 0) {
+         val = "1";
+      }         
+      if(s == 1 && r == 1) {
+         val = "x";
+      }         
+      System.out.println("|S |R |Q(t+1)");
+      System.out.println("|"+s+" |"+r+" |"+val);
+      return 0;
+   }
+   
+   static public int t(int t) {
+      String val = "";
+      if(t == 0) {
+         val = "Q(t)";
+      }   
+      if(t == 1) {
+         val = "Q`(t)";
+      }   
+      System.out.println("|T |Q(t+1)");
+      System.out.println("|"+t+"|"+val);      
+      
+      return 0;
+   }
+   
+   static public int d(int d) {
+      String val = "";
+      if(d == 0) {
+         val = "0";
+      }   
+      if(d == 1) {
+         val = "1";
+      }   
+      System.out.println("|D |Q(t+1)");
+      System.out.println("|"+d+"|"+val);      
+      
+      return 0;
+   }   
+}
